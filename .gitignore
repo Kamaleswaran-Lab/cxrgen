@@ -1,0 +1,29 @@
+# Virtual environment
+cxrgen/
+*.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE settings
+.vscode/
+.idea/
+
+# Dependency directories
+*.egg-info/
+dist/
+build/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment files
+.env
+
+# Output and Error Files
+OutputErrorFiles/
+
+
