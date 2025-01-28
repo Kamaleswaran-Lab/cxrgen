@@ -27,3 +27,5 @@ build/
 OutputErrorFiles/
 
 
+#Ipython checkpoint
+.ipynb_checkpoints/
