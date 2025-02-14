@@ -28,7 +28,7 @@ build/
 
 # Output and Error Files
 OutputErrorFiles/
-
+out/
 
 #Ipython checkpoint
 .ipynb_checkpoints/
