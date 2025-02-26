@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=dimReduceEmbeddings
-#SBATCH --output=../out/dim_reduce_embeddings.log
-#SBATCH --error=../out/dim_reduce_embeddings.err
+#SBATCH --job-name=SdimReduceEmbeddings
+#SBATCH --output=../out/dim_reduce_embeddings_selected.log
+#SBATCH --error=../out/dim_reduce_embeddings_selected.err
 #SBATCH --time=24:00:00
-#SBATCH --partition=gpu-common
+#SBATCH --partition=scavenger-gpu
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=72G

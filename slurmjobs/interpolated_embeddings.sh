@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=interpolate
-#SBATCH --output=../out/interpolate_image.log
-#SBATCH --error=../out/interpolate_image.err
+#SBATCH --output=../out/interpolate_image_ehr.log
+#SBATCH --error=../out/interpolate_image_ehr.err
 #SBATCH --time=24:00:00
 #SBATCH --partition=compalloc
 #SBATCH --ntasks=1

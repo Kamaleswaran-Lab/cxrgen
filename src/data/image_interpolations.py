@@ -60,10 +60,25 @@ def process_df(supertable_path):
     return None 
 
 
+def get_ehr_matrix(file):
+    df = pd.read_pickle(file)
+    df.drop(columns = [ 'cxr_timing',
+                        'cxr_timing_approx_flag',
+                        'encounter_id', 'cxr_timing_ffill'], inplace = True)
+    #Convert all columns to float 
+    for col in df.columns:
+        df[col] = df[col].astype(float)
+    df_values = df.values 
+    np.save(file.with_suffix('.npy'), df_values)
+    print(f"Saved {file.with_suffix('.npy')}")
+    return None
+
+
+
 root = Path('/hpc/group/kamaleswaranlab/EmoryDataset/Images/chest_xrays')
 embedding_path = root / 'BioMedCLIP_embeddings'
 supertable_path = root / 'matched_supertables_with_images'
-supertable_template = "_timing_corrected_processed.pickle"
+supertable_template = "_image_interpolated.pickle"
 
 supertables = list(supertable_path.glob("*" + supertable_template))
 print(f"Found {len(supertables)} supertables")
@@ -71,6 +86,6 @@ print(f"Found {len(supertables)} supertables")
 cpu_count = mp.cpu_count()
 
 with mp.Pool(cpu_count) as pool:
-    pool.map(process_df, supertables)
+    pool.map(get_ehr_matrix, supertables)
 
 print("Done!")

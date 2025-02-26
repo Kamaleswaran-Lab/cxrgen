@@ -263,8 +263,8 @@ class RapidsDimReduction:
     
 def main():
     root = Path('/hpc/group/kamaleswaranlab/EmoryDataset/Images/chest_xrays')
-    embedding_path = root / 'BioMedCLIP_embeddings'
-    save_path = root / 'dimReduce'
+    embedding_path = root / 'BioMedCLIP_embeddings' / 'selected_embeddings'
+    save_path = root / 'dimReduce' / 'selected_embeddings'
     os.makedirs(save_path, exist_ok=True)
 
     # Load the embeddings
