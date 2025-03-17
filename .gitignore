@@ -32,3 +32,10 @@ out/
 
 #Ipython checkpoint
 .ipynb_checkpoints/
+
+# npy files 
+*/*.npy
+*.npy
+
+#Scratch Notebooks
+scratch/notebooks/*.ipynb
