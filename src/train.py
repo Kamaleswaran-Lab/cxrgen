@@ -14,7 +14,7 @@ import shutil
 from models import mlp, transformernn
 from data import dataloaders
 from training.trainer import Trainer, TrainerMLP, TimeSeriesTransformerTrainer, TrainerConfig
-from src.configs.config_def import set_paths, run_configs
+from src.configs.config_tft import set_paths, run_configs
 
 class MLPModel(torch.nn.Module):
     def __init__(self, input_size, output_size, hidden_sizes=[512, 256]):
